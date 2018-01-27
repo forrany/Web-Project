@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.la
+		 {
+			 max-width: 500px; 
+			background:red;
+		}
+		.wapper{
+			float: left;
+			max-width: 250px;
+			text-align:justify;
+			background:black;
+
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="test">
+		<div class="wapper la"" >
+			<img src=".idea/images/contentlt.png" style="opacity: 0;" alt="">
+		</div>	
+	</div>
+
+	<script type="text/javascript">
+		var obj = {
+			a : 1,
+			b : 2,
+			c : 3,
+			Person : ["Sam","Jordan","Kobe"],
+			wife : {
+				name : "Xuyingxue",
+				age : 16,
+				son : "Gaoxiao"
+			}
+		}
+		var obj1 = {
+				"0" : "a" ,
+				"1" : "b" ,
+				"2" : "c" ,
+				"length" : 3,
+				"push" : Array.prototype.push
+		}
+		function deepclone (origin,target) {
+			target = target || {};
+			var toStr = Object.prototype.toString,
+				Arr = "[object Array]";
+			for(var prop in origin){
+				if(origin.hasOwnProperty(prop)) {
+					if (typeof origin[prop] == "object"){
+						if(toStr.call(origin[prop]) == Arr){
+							target[prop] = [];
+						}
+						else{
+							target[prop] = {};
+						}
+						deepclone(origin[prop],target[prop]);
+					}
+					else{
+						target[prop] = origin[prop];
+					}
+				}
+			}
+		}		
+		Array.prototype.mypush = function () {  //不加形参，因为你不知道要传几个
+			for(var i = 0; i < arguments.length; i++){
+				this[this.length] = arguments[i];
+			}
+
+		}			
+		Array.prototype.disorder = function () {
+			this.sort(function (a,b){
+				return Math.random()-0.5;
+			})
+		}
+		Array.prototype.distint = function () {
+			var ram = [];   //新建立一个数组
+			var bool = true;   //用于表示，检索后是否发现重复的
+			var j = 0;
+			for(var i = 0; i < this.length; i++){
+				for(var prop in ram){
+					if(this[i] == ram[prop]){
+						bool = false;
+						break;
+					}
+					bool = true;
+				}
+				if(bool){
+					ram[j] = this[i];
+					j++; 
+				}
+			}
+			return ram;
+		}
+		function type(sth) {
+			var toStr = Object.prototype.toString;
+			var one = "[object Array]",
+				two = "[object Number]";
+				three = "[object Boolean]"
+				four = "[object String]"
+			if(sth === null){
+				return null;
+			}
+			if (typeof(sth) == "object"){
+				switch(toStr.call(sth)){
+					case one : console.log(one);  break;
+					case two : console.log(two);  break;
+					case three : console.log(three); break;
+					case four : console.log(four); break;
+					default : console.log("object");
+				}
+			}
+			else{
+				console.log(typeof(sth));
+			}
+		}
+		function Person(name,age) {
+			this.name = name;
+			this.age = age;
+		}
+		var person = new Person("gao" ,17);
+
+
+		var a = [1,2,3,4,5,6,7];
+		var b = new Number(123);
+		var c = type;
+		var d = new Boolean(true);
+		var e = new String("Gao");
+
+
+
+
+
+	</script>
+</body>
+</html>
+

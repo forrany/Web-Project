@@ -1,0 +1,93 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body{
+	background-color: #ccc;
+}
+.wrapper{
+	width: 720px;
+	height: 412px;
+	margin: 100px auto;
+	overflow: hidden;
+	position: relative;
+}
+.wrapper .box{
+	width: 400%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: left 1s;
+}
+.box ul li{
+	float: left;
+} 
+
+.box img{
+	width: 720px;
+	height: 410px;
+}
+.wrapper .next{
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	z-index: 99;
+	right: -17px;
+	top: 185px;
+	border: 30px solid rgba(200,200,200,0.4);
+	border-right-color:transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.wrapper .next:hover{
+	border: 30px solid rgba(200,200,200,0.9);
+	border-right-color:transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	cursor: pointer;
+}
+.wrapper .last{
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	z-index: 99;
+	left: -17px;
+	top: 185px;
+	border: 30px solid rgba(200,200,200,0.4);
+	border-left-color:transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.wrapper .last:hover{
+	border: 30px solid rgba(200,200,200,0.9);
+	border-left-color:transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	cursor: pointer;
+}
+.wrapper .dot{
+	width: 400px;
+	height: 30px;
+	position: absolute;
+	top: 330px;
+	left: 295px;
+	line-height: 30px;
+}
+.wrapper .dot li{
+	width: 15px;
+	height: 15px;
+	background-color:rgba(200,200,200,0.4);
+	border: 2px solid #eee;
+	border-radius: 50%;
+	float: left;
+	margin-right: 20px;	
+	cursor: pointer;
+}
+.wrapper .dot li:hover{
+	background-color:rgba(200,200,200,1);
+}
+.wrapper .dot .act{
+	background-color:rgba(200,200,200,0.8);
+}

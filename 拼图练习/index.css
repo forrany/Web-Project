@@ -1,0 +1,63 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.wrapper{
+	height: 500px;
+	width: 500px;
+	border: 1px solid black;
+	margin: 0 auto;
+	position: relative;
+}
+
+.start{
+	height: 40px;
+	width: 80px;
+	background-color: #fff8dc;
+	border: 1px solid black;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin-left: -40px;
+	cursor: pointer;
+}
+
+.Content{
+	height: 300px;
+	width: 300px;
+	border: 2px solid #ddd;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+}
+.Content .imgAera{
+	height: 100%;
+	width: 100%;
+	position: relative;   /* 要在其中放入碎片，所以必须作为参照物 */
+}
+
+.Content .imgCell{
+	float: left;
+	border-radius: 4px;
+	position: absolute;
+	z-index: 10;
+	box-shadow: 0 0 8px #fff;
+	transition-property: background-position;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in-out;
+
+}
+
+.Content .hover{
+	opacity: 0.8;
+	box-shadow: 0 0 8px #000;
+	z-index: 20;
+	border: 1px solid blue;
+}

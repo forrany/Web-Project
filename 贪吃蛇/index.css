@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    height: 780px;
+    width: 1583px;
+    background-image: url('bg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.info{
+    position: absolute;
+    margin-top: 20px;
+    width: 100%;
+}
+.info h2{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    text-shadow: -1px  1px 0 #424242,
+                     -4px  4px 0 #424242, 
+                     -5px  5px 0 rgb(59, 234, 147),     
+                     -6px  6px 0 rgb(59, 234, 147),
+                     -7px  7px 0 rgb(15, 179, 186),
+                     -8px  8px 0 rgb(15, 179, 186),
+                     -9px  9px 0 rgb(15, 95, 186),
+                     -10px 10px 0 rgb(15, 95, 186),
+                     -11px 11px 25px #000;
+}
+.gameAera .textScore{
+    position: absolute;
+    bottom: -50px;
+    right:40px;
+    font-size: 30px;
+    font-weight:bold;
+    color:#9DE7C5;
+    text-shadow: -4px 3px 0 #424242,
+    -6px 5px 0 rgba(255,255,255,0.125);
+    text-align: center;
+}
+.wrapper .gameAera{
+    width: 1200px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-49%);
+    border: 5px solid red;
+}
+.wrapper .startGame{
+    width: 300px;
+    height: 300px;
+    background-image: url('start.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+}
+#snakeBlock{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+#snakeHead{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(snakeHead.png);
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+.snakeBody{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 15px;
+}

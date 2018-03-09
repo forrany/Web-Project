@@ -40,6 +40,18 @@
     -6px 5px 0 rgba(255,255,255,0.125);
     text-align: center;
 }
+.gameAera .actScore{
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    font-size: 30px;
+    font-weight:bold;
+    color:#9DE7C5;
+    text-shadow: -4px 3px 0 #424242,
+    -6px 5px 0 rgba(255,255,255,0.125);
+    text-align: center;
+
+}
 .wrapper .gameAera{
     width: 1200px;
     height: 600px;
@@ -67,6 +79,7 @@
     position: relative;
     width: 40px;
     height: 40px;
+    background-color: transparent;
 }
 
 #snakeHead{
@@ -85,4 +98,14 @@
     height: 40px;
     background-color: yellow;
     border-radius: 15px;
+}
+
+.wrapper .gameAera .apple{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    box-shadow: 1px 1px 3px #f25;
+    border-radius: 50%;
+    position: absolute;
+
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动动球</title>
+	<style>
+		body{
+			margin: 0;
+		}
+		.bubble{
+			background-color: red;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas class="bubble"></canvas>
+	<script>
+		/*
+			1.将canvas宽高设置的和浏览器一样 
+			   - 注意，获取浏览器的高度  window.innerWidth/innerHeight
+			   - 赋值，可以直接 canvas.width = w; canvas.height = x; 因为canvas本身有width height属性
+			2. oop面向对象编程。每个球都是一个对象，其所有的方法，属性写在其原型链上
+			   - Bubble.prototype.init()  初始化函数，初始化需要确定bubble的x,y 位置 r半径等，用随机数生成大小不一的球;
+			      - 初始化init(x,y) 与 init() 的不同，鼠标跟随要求确定的x,y，随机生成要求随机，实现函数重载 overload解决此问题
+			   - Bubble.prototype.draw()  根据init的位置，半径等，画出图形。 注意canvas上 beginPath()的重要性
+			   - Bubble.prototype.move()  利用定时器进行不断调用，通过改变bubble的x,y，重绘来实现动画效果。注意每次擦除桌布
+			3. 鼠标跟随
+			   - canvas.addEventListener('mousemove',function (e) {})  函数中，记录e.pageX  e.pageY，赋值，绘图
+		*/
+		var h = window.innerHeight,
+			w = window.innerWidth,
+			nBubble = [];
+		var canvas = document.getElementsByClassName('bubble')[0],
+			conT = canvas.getContext('2d');
+		(function () {
+			canvas.width = w;
+			canvas.height = h;
+			window.onresize = function () {
+			h = window.innerHeight;
+			w = window.innerWidth;
+			canvas.width = w;
+			canvas.height = h;
+		}
+		})();
+		function Bubble (x,y) {
+			this.colorData = ["rgb(94,213,209)","rgb(255,110,151)","rgb(199,255,236)","rgb(0,255,128)","rgb(208,233,255)"];
+			if(arguments.length == 0){
+				this.init();
+			}else{
+				this.init(x,y);				
+			}
+
+			this.draw();
+			this.vX = random(-1,1);
+			this.vY = random(-1,1);
+		}
+		Bubble.prototype = {
+			init : function (x,y) {              //实现 函数的 overload
+				if(arguments.length == 0){
+					this.x = random(0,w) ;
+					this.y = random(0,h);					
+				}else{
+					this.x = x;
+					this.y = y;
+				}
+				this.r = random(3,8);
+				this.color = this.colorData[Math.floor(random(0,5))];
+			},
+			draw : function () {
+				conT.beginPath();
+				conT.fillStyle = this.color;
+				conT.arc(this.x,this.y,this.r,0,2*Math.PI);
+				conT.fill();
+			},
+			move : function () {
+				this.x += this.vX;
+				this.y +=this.vY;
+			},
+			conllisionDect : function () {
+				if(this.x - this.r < 0 || this.x + this.r > w){
+					this.vX = -this.vX;
+				};
+				if(this.y - this.r < 0 || this.y + this.r > h){
+					this.vY = -this.vY;
+				}
+			}
+		}
+		creat(200);
+		window.setInterval(function () {
+			conT.clearRect(0,0,w,h);
+			for(var key of nBubble){
+				key.move();
+				key.draw();
+				key.conllisionDect();
+			}
+		},1000/60)
+		canvas.addEventListener('mousemove',function (e) {
+			var x = e.pageX,
+				y = e.pageY,
+				len = nBubble.length;
+			nBubble[len] = new Bubble(x,y);
+			console.log(x,y);
+		})
+		function random(min,max) {
+			return Math.random() * (max - min) + min;
+		}
+		function creat(num) {
+			for(var i = 0; i< num; i++){
+				nBubble[i] =  new Bubble();
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+.tempEmpty{
+    color: #aaa;
+}
+.manageTable{
+    width: 1300px;
+    height: 72px;
+}
+.manageTable thead{
+    color: #90929a;
+}
+thead{
+    border-bottom: 2px solid #ecf0f8;
+}
+.manageList{
+    border-bottom: 2px solid #ecf0f8;
+    line-height: 28px;
+}
+.manageTable thead td{
+    width: 70px;
+    text-align: left;
+    padding: 5px 12px;
+    font-weight: bold;
+    line-height: 33px;
+}
+.manageTable .buttonWrapper{
+    margin-right: 0;
+    width: 140px;
+    border-bottom: 2px solid #ecf0f8;
+}
+.manageList .manage{
+    margin: 0 0 0 10px;
+    padding:0;
+    border: none;
+    width: 50px;
+    height: 26px;
+    border-radius: 5px;
+    background-color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 0 2px #e4e6ed;
+    cursor: pointer;
+
+}
+.manageList .content{
+    padding: 0 4px;
+    border-bottom: 2px solid #ecf0f8;
+}
+.check{
+    position: absolute;
+    left: 8px;
+    top: 93px;
+}

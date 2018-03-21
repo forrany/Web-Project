@@ -1,0 +1,69 @@
+html{
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+  }
+#content .aside{
+  height: 720px;
+  background-color: #fff;
+  width: 200px;
+  float: left;
+}
+#content .aside .optionWrapper {
+  width: 170px;
+  border-right: 1px solid #ececec;
+  padding: 10px 0 10px 40px;
+  margin-top: 15px;
+}
+#content .aside .optionWrapper li{
+  margin: 40px 10px;
+  cursor: pointer;
+}
+#content .aside .optionWrapper li .active{
+  color: #5ca8ff;
+}
+#content .aside .optionWrapper img{
+  width: 18px;
+  height: 18px;
+  margin-right: 15px;
+  vertical-align: -3px;
+}
+#content .main{
+  height: 720px;
+  background-color: #ffffff;
+  overflow: auto;
+  position: relative;
+}
+.inputE{
+  position: relative;
+}
+.taginput{
+  position: absolute;
+  left: 100px;
+  top: 0px;
+}
+.signal{
+  color: red;
+}
+#content .addTrip{
+  width: 100%;
+  height: 800px;
+  background-color: #fff;
+  position: absolute;
+  z-index:-1 ; /* 记得之后最为初始状态 */
+  top: 25px;
+  left: 0;
+}

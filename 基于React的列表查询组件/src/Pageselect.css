@@ -1,0 +1,10 @@
+#pageManage{
+	text-align: center;
+	font-weight: bold;
+}
+#pageManage a{
+	text-decoration: none;
+	margin: 5px 20px;
+	color: #90929a;
+	
+}

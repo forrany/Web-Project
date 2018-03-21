@@ -1,0 +1,151 @@
+.AddtripWrapper .AddHeader{
+    height: 45px;
+    border:none;
+    font-weight: bold;
+    margin: 5px 5px;
+    border-radius: 5px;
+}
+.AddtripWrapper .AddHeader input:nth-child(1){
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #d9dde6;
+    border:none;
+    height: 45px;
+    width: 88px;
+    font-weight: bold;
+    margin: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.AddtripWrapper .AddHeader input:nth-child(2){
+    background-color: #409eff;
+    box-shadow: 0 0 0 1px #c1dfff;
+    border:none;
+    height: 45px;
+    width: 88px;
+    font-weight: bold;
+    color: #fff;
+    margin: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.AddtripWrapper .AddHeader input:nth-child(3){
+    background-color: #409eff;
+    box-shadow: 0 0 0 1px #c1dfff;
+    border:none;
+    height: 45px;
+    width: 140px;
+    font-weight: bold;
+    color: #fff;
+    margin: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.AddtripWrapper .AddContent{
+    margin: 20px 0;
+}
+.AddContent #AddContLeft{
+    width: 149px;
+    height: 800px;
+    float: left;
+    border-right: 2px solid #dde2ec;
+}
+.AddContent #AddContMain{
+    height: 800px;
+    overflow: auto;
+    background-color: #fff;
+}
+.AddContent #AddContLeft p {
+    box-sizing: border-box;
+    width: 149px;
+    font-weight: bold;
+    border-right: 1px solid #dde2ec;
+    text-align: right;
+    padding: 15px 30px;
+    margin: 10px 0 
+}
+.AddContent #AddContLeft p:nth-child(1){
+    box-sizing: border-box;
+    width: 149px;
+    font-weight: bold;
+    color: #3097ff;
+    border-right: 2px solid #3097ff;
+    text-align: right;
+    padding: 15px 30px;
+    margin: 0;
+}
+#AddContMain .AddTitle{
+    margin: 20px 0 20px 54px;
+    font-weight: bold;
+    color: #64676f;
+    position: relative;
+    height: 60px;
+    
+}
+#AddContMain #PhotoPlug img{
+    height: 100%;
+    margin-left: 32px;
+}
+#AddContMain .AddTitle span{
+    color: red;
+    margin-right: 5px;
+}
+#AddContMain .AddTitle #AddTripTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 46px;
+    width: 591px;
+    border: 2px solid #8dd16d;
+    border-radius: 5px;
+    margin-left: 42px;
+    color: #64676f;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 20px;
+}
+#AddContMain .AddTitle #AddTripTitle:focus{
+    outline: none;
+}
+#AddContMain .AddTitle label{
+    font-size: 14px;
+    position: absolute;
+    left: 130px;
+    top:55px;
+    color: #7a7a7a;
+}
+
+#AddContMain #PhotoPlug{
+    height: 370px;
+}
+#AddContMain table span {
+    color: red;
+    margin-right: 5px;
+}
+#AddContMain #addTripTable{
+    color: #595d65;
+    font-weight: 400;
+}
+#AddContMain #addTripTable .tableText{
+    padding-left: 60px;
+    width: 170px;
+}
+#AddContMain #addTripTable .tableTag{
+    line-height: 32px;
+}
+#AddContMain #addTripTable #hotness{
+    line-height: 36px;
+    width: 80px;
+    outline-color:#83cd60;
+    text-align: center;
+    font-size: 15px;
+    color: #595d65;
+    margin-right: 15px;
+    margin-left: 0;
+}
+#AddContMain #addTripTable textarea{
+    border-radius: 5px;
+    outline-color: #83cd60;
+    width: 565px;
+    height: 43px;
+    padding: 5px 10px;
+    overflow: hidden;
+
+}

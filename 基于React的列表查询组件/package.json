@@ -1,12 +1,15 @@
 {
+  "homepage" : "./",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.9",
     "react-scripts": "1.1.1",
-    "react-tagsinput": "^3.19.0"
+    "react-tagsinput": "^3.19.0",
+    "superagent": "^3.8.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Mytaginput from './Mytaginput'
 import Mytextarea from './Mytextarea.react'
 import './Addtrip.css'
-
+import ContactForm from './Imageupload.react'
+/* <img src={upload} />*/
 var upload = require('./img/clip.jpg');
 class Addtrip extends Component{
     constructor(props) {
@@ -70,7 +71,7 @@ class Addtrip extends Component{
                             <label ref="label" for="AddTripTitle">(名称长度5-30个字)</label>
                         </div>
                         <div id="PhotoPlug">
-                            <img src={upload} />
+                             <ContactForm />                         
                         </div>
                         <table id="addTripTable">
                             <tr>

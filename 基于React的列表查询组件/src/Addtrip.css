@@ -115,10 +115,10 @@
 #AddContMain #PhotoPlug{
     height: 370px;
 }
-#AddContMain table span {
+/* #AddContMain table span {
     color: red;
     margin-right: 5px;
-}
+} */
 #AddContMain #addTripTable{
     color: #595d65;
     font-weight: 400;
@@ -126,6 +126,9 @@
 #AddContMain #addTripTable .tableText{
     padding-left: 60px;
     width: 170px;
+}
+#AddContMain #addTripTable .tableText span{
+    color: red;
 }
 #AddContMain #addTripTable .tableTag{
     line-height: 32px;
@@ -148,4 +151,21 @@
     padding: 5px 10px;
     overflow: hidden;
 
+}
+
+#AddContMain #PhotoPlug .uploadImgText{
+    width: 150px;
+    padding-left: 47px;
+    line-height: 46px;
+}
+
+#AddContMain #PhotoPlug .uploadImgDrag{
+    padding-left: 45px;
+    width: 260px;
+    line-height: 123px;
+    text-align: center;
+}
+#AddContMain #PhotoPlug #uploadNext{
+    text-align:center;
+    line-height: 123px;
 }

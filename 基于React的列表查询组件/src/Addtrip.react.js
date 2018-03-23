@@ -71,7 +71,20 @@ class Addtrip extends Component{
                             <label ref="label" for="AddTripTitle">(名称长度5-30个字)</label>
                         </div>
                         <div id="PhotoPlug">
-                             <ContactForm />                         
+                            <table>
+                                <tr>
+                                    <td className="uploadImgText">美团行程头图  (尺寸要求 750*420)</td>
+                                    <td className="uploadImgDrag"><ContactForm /></td>
+                                </tr>
+                                <tr>
+                                    <td className="uploadImgText">点评行程头图 (建议尺寸: 705*300 、750*1334)</td>
+                                    <td className="uploadImgDrag"><ContactForm /></td> 
+                                    <td id="uploadNext">
+                                         <ContactForm />
+                                    </td>
+                                </tr>
+                            </table>
+                                                     
                         </div>
                         <table id="addTripTable">
                             <tr>

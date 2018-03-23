@@ -1,0 +1,21 @@
+
+
+#imageUploadWrapper{
+	position: relative;
+}
+#imageUploadWrapper #innerImage{
+	background-color: "transparent";
+	width:"150px";
+	position:"absolute";
+	left: "149px";
+    top: "170px";
+    pointer-events:"none";
+}
+
+#imageUploadWrapper #innerImage #img{
+	height: 130px;
+	border: 1px solid #ddd;
+	position: absolute;
+	top: -58px;
+	left:-30px;
+}

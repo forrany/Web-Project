@@ -5,7 +5,7 @@
 .wrapper{
     height: 780px;
     width: 1583px;
-    background-image: url('bg.jpg');
+    background-image: url('./bg.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -64,7 +64,7 @@
 .wrapper .startGame{
     width: 300px;
     height: 300px;
-    background-image: url('start.png');
+    background-image: url('./start.png');
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
@@ -87,7 +87,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-image: url(snakeHead.png);
+    background-image: url("./snakeHead.png");
     background-size: 100%;
     background-repeat: no-repeat; 
 }

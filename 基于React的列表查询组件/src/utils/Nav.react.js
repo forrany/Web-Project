@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-var plus = require('./img/circleplus.png'),
-    double = require('./img/doubleClomn.png');
+var plus = require('../img/circleplus.png'),
+    double = require('../img/doubleClomn.png');
 
 class Nav extends Component{
     render(){

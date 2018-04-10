@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import MySelect from './Selete.react';
 import './SearchPannel.css';
 
-var arrow = require('./img/arrow-down.png');
+var arrow = require('../img/arrow-down.png');
 var filterKey = {
     plat: "all",
     state: "all",
@@ -21,7 +21,7 @@ class SearchPannel extends Component {
     changeValue(value) {
         this.setState({
             value: value
-        },function () { filterKey.select = this.state.value;})    //setstate异步带来的问题，需要传入第二个参数解决
+        },function () { filterKey.select = this.state.value;})    /*setstate异步带来的问题，需要传入第二个参数解决，第二个参数是一个回掉函数，状态改变完毕，才会执行*/
     }
     componentDidMount() {
         domSets.terminiDom = ReactDom.findDOMNode(this.refs.termini),

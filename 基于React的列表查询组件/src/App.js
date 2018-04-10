@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom';
-import SearchPannel from './SearchPannel.react'
-import TableList from './TableList.react'
-import Trips from './Function.react'
-import Nav from './Nav.react'
-import Addtrip from './Addtrip.react'
-import Pageselect from './Pageselect.react'
+import SearchPannel from './utils/SearchPannel.react'
+import TableList from './utils/TableList.react'
+import Trips from './utils/Function.react'
+import Nav from './utils/Nav.react'
+import Addtrip from './utils/Addtrip.react'
+import Pageselect from './utils/Pageselect.react'
 import './main.css';
 class App extends Component {
     constructor(props){

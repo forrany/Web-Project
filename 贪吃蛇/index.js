@@ -54,7 +54,7 @@ SnakeInit.prototype.cashDectet = function () {
             alert("Game Over! Your Score Is : " + self.score);
             clearInterval(self.timer1);
             clearInterval(cashTimer);
-        }else if((y + BY) < 0 || (y + BY) > 600){
+        }else if((y + BY) < 0 || (y + BY) > 560){
             alert("Game Over! Your Score Is : " + self.score);
             clearInterval(self.timer1);
             clearInterval(cashTimer);            
@@ -64,8 +64,6 @@ SnakeInit.prototype.cashDectet = function () {
             self.detectPosition.x[i] = parseInt(getComputedStyle(snakeBlock.children[i]).left);
             self.detectPosition.y[i] = parseInt(getComputedStyle(snakeBlock.children[i]).top);
         }
-        var indexX = self.detectPosition.x.lastIndexOf(x),
-            indexY = self.detectPosition.y.lastIndexOf(y);
         for(var i = 1; i < len; i++){
             if(x == self.detectPosition.x[i]){
                 if(y == self.detectPosition.y[i]){
@@ -95,6 +93,7 @@ SnakeInit.prototype.bindKeyEvent = function () {
         len = snakeBody.length,
         self = this;
         document.addEventListener('keydown',function (e) {
+        e.preventDefault();
         switch(e.key) {
             case 'ArrowDown' : 
                 console.log(e.key);

@@ -63,7 +63,7 @@ export default class Trips {
     */
     searchItems(searchObj) {      
         this.searchObj = searchObj;
-        this.trips = this.allTrips;
+        this.trips = this.allTrips;    //每次搜索都会复位
         this.key = searchObj.keyWord;
         this.id = searchObj.id;
         this.termini = searchObj.termini;

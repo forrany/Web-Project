@@ -18,7 +18,7 @@ class App extends Component {
         this.page = 0;
         this.state.pageLen = this.state.trips.trips.length;  //用于传给翻页组件，总共多少列表
         this.setState({
-            trips: this.state.trips.pageSelect(0)
+            trips: this.state.trips.pageSelect(0)  // 初始化，翻页到0位置
         })
     }
     deleteItem(value){
@@ -55,7 +55,7 @@ class App extends Component {
                 this.setState({trips: this.state.trips.pageSelect(this.page)});
                 break;
             case 3:
-                this.page = Math.floor(this.state.pageLen/2);
+                this.page = Math.floor(this.state.pageLen/2);  //末页，因为每页显示两条，因此pageLen/2
                 this.setState({trips: this.state.trips.pageSelect(this.page)});
                 break;
         }
@@ -83,7 +83,7 @@ class App extends Component {
                 <div className="main">
                     <SearchPannel searchItems={this.searchItems.bind(this)}/>   
                     <TableList deleteItem={this.deleteItem.bind(this)} items={this.state.trips.trips}/>
-                    <Pageselect page={this.state.curPage} pageLen={this.state.pageLen} pageSelect={this.pageSelect.bind(this)} />
+                    <Pageselect pageLen={this.state.pageLen} pageSelect={this.pageSelect.bind(this)} />
                     <div className="addTrip" ref="add">
                         <Addtrip />
                     </div>

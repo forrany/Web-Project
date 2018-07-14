@@ -59,7 +59,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass">
 .title
-  width: 21.445875rem
+  width: 100%
   height: 1.865563rem
   padding: 1.25rem 1rem 0 1rem
   line-height: 1.875rem

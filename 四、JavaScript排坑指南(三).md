@@ -4,7 +4,11 @@ JavaScript总是给人以惊喜，学习不止，进步不断，今天继续补�
 
 --------------------------------------[前端系列传送门](https://github.com/forrany/Web-Project)-----------------------------------
 
+[前端面试&笔试&错题指南(一)](https://github.com/forrany/Web-Project/blob/master/%E4%B8%80%E3%80%81%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%26%E9%94%99%E9%A2%98%E6%8C%87%E5%8D%97.md)
 
+[前端面试&笔试&错题指南（二）](https://github.com/forrany/Web-Project/blob/master/%E4%BA%8C%E3%80%81JavaScript%E6%8E%92%E5%9D%91%E6%8C%87%E5%8D%97(%E4%BA%8C).md)
+
+[JavaScript排坑指南(三)](https://github.com/forrany/Web-Project/blob/master/%E5%9B%9B%E3%80%81JavaScript%E6%8E%92%E5%9D%91%E6%8C%87%E5%8D%97(%E4%B8%89).md)
 
 ##  ”老生常错“的this与作用域相关
 

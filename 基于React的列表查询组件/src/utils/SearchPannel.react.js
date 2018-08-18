@@ -24,12 +24,12 @@ class SearchPannel extends Component {
         },function () { filterKey.select = this.state.value;})    /*setstate异步带来的问题，需要传入第二个参数解决，第二个参数是一个回掉函数，状态改变完毕，才会执行*/
     }
     componentDidMount() {
-        domSets.terminiDom = ReactDom.findDOMNode(this.refs.termini),
-        domSets.daysPreDom = ReactDom.findDOMNode(this.refs.daysPre),
-        domSets.daysAfterDom = ReactDom.findDOMNode(this.refs.daysAfter),
-        domSets.stateDom = ReactDom.findDOMNode(this.refs.state),
-        domSets.platDom = ReactDom.findDOMNode(this.refs.plat),
-        domSets.idDom = ReactDom.findDOMNode(this.refs.id),
+        domSets.terminiDom = ReactDom.findDOMNode(this.refs.termini);
+        domSets.daysPreDom = ReactDom.findDOMNode(this.refs.daysPre);
+        domSets.daysAfterDom = ReactDom.findDOMNode(this.refs.daysAfter);
+        domSets.stateDom = ReactDom.findDOMNode(this.refs.state);
+        domSets.platDom = ReactDom.findDOMNode(this.refs.plat);
+        domSets.idDom = ReactDom.findDOMNode(this.refs.id);
         domSets.keyWordDom = ReactDom.findDOMNode(this.refs.keyWord);
     }
     Tchange() {  
@@ -106,7 +106,7 @@ class SearchPannel extends Component {
                                     <option value="published">已发布</option>
                                     <option value="unpublished">未发布</option>
                                 </select>
-                                <img src={arrow} />
+                                <img alt="箭头" src={arrow} />
                             </div>
                             
                         </td>
@@ -119,7 +119,7 @@ class SearchPannel extends Component {
                                     <option value="all">全部</option>
                                     <option value="meituan">美团</option>
                                 </select>
-                                <img src={arrow} />
+                                <img alt="箭头" src={arrow} />
                             </div>
 
                         </td>

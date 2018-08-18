@@ -81,7 +81,7 @@ class ContactForm extends Component{
 			      <div>
 			        {this.state.uploadedFileCloudinaryUrl === '' ? null :
 			        <div id="innerImage">
-			          <img id="img" src={this.state.uploadedFileCloudinaryUrl} />
+			          <img id="img" alt="上传图片" src={this.state.uploadedFileCloudinaryUrl} />
 			        </div>}
 			      </div>
 			    </div>

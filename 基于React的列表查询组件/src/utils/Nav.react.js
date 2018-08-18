@@ -8,12 +8,12 @@ class Nav extends Component{
             <ul className="optionWrapper">
                 <li onClick = {this.props.closeAdd}>
                     <div>
-                        <img src={double} /><span className="active">行程列表</span>
+                        <img alt="行程" src={double} /><span className="active">行程列表</span>
                     </div>
                 </li>
                 <li onClick = {this.props.addTrip}>
                     <div>
-                        <img src={plus} /><span className="normal">新增行程</span>
+                        <img alt="新增" src={plus} /><span className="normal">新增行程</span>
                     </div>
                 </li>
             </ul>

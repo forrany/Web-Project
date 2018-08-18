@@ -14,8 +14,7 @@ class TabelList extends Component{
         this.props.deleteItem(value);
     }
     render() {
-        let items = [],
-            showIt = [];
+        let items = [];
         if(this.props.items.length === 0){
             items.push(<tr><th colSpan="12" className="tempEmpty">暂无记录</th></tr>);
         }else{

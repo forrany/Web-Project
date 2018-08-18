@@ -1,5 +1,6 @@
 html{
     box-sizing: border-box;
+    height: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -7,6 +8,7 @@ html{
     box-sizing: inherit;
   }
   body {
+    height:100%;
     margin: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #fff;
@@ -16,6 +18,12 @@ html{
     margin: 0;
     padding: 0;
   }
+#root {
+  height: 100%;
+}
+#content {
+  height: 100%;
+}
 #content .aside{
   height: 720px;
   background-color: #fff;
@@ -42,7 +50,7 @@ html{
   vertical-align: -3px;
 }
 #content .main{
-  height: 720px;
+  height: 100%;
   background-color: #ffffff;
   overflow: auto;
   position: relative;

@@ -14,8 +14,8 @@ const options = [
 ]
 
 class MySelect extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
     }
     handleChange(value){
         this.props.changeValue(value);

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom';
 import TagsInput from 'react-tagsinput'  //taginput 插件
 import 'react-tagsinput/react-tagsinput.css' //taginput样式
 

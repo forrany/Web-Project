@@ -4,7 +4,6 @@ import './Pageselect.css'
 class Pageselect extends Component{
 	constructor() {
 		super();
-		
 	}
 	firstPage() {
 		this.props.pageSelect(0);

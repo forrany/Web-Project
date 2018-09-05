@@ -1,15 +1,17 @@
 <template>
     <div class="wrapper">
-        <ul class="nav">
-            <li v-for="(item,index) in goods" :key="index" class="nav-list">
+        <div class="navWrapper">
+            <ul class="nav">
+            <li v-for="(item,index) in goods" :key="index" :class="{'current': currentIndex === index}" class="nav-list" @click="gotoFoods(index)">
                 <span class="text border-1px">
                     <span v-show="item.type>0" class="icon" :class="mapClass[item.type]"></span>{{item.name}}
                 </span>
             </li>
         </ul>
+        </div>
         <div class="foodsWrapper" ref="bsWrapper">
             <ul>
-                <li v-for="(item,index) in goods" :key="index" class="food-list">
+                <li v-for="(item,index) in goods" :key="index" class="food-list food-list-hook">
                     <h1 class="title">{{item.name}}</h1>
                     <ul>
                         <li v-for="(food,index) in item.foods" :key="index" class="food-item border-1px">
@@ -26,17 +28,22 @@
                                     <span class="curP">￥</span><span class="num">{{food.price}}</span><span class="oldP" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                                 </div>
                             </div>
+                            <v-cartcontrol :food="food" v-on:cartAdd="childCartAdd" ref="control"/>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
+        <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selected-goods="selectedGoods" ref="shopcart"/>
     </div>
 </template>
 <script>
 /* eslint space-before-function-paren: ["error", "never"] */
 /* eslint semi: "error" */
 import Bscroll from 'better-scroll';
+import shopcart from '../shopcart/Shopcart';
+import cartcontrol from '../cartcontrol/Control';
+
 const ERR_OK = 0;
 export default{
     props: {
@@ -44,25 +51,86 @@ export default{
             type: Object
         }
     },
+    components: {
+        'v-shopcart': shopcart,
+        'v-cartcontrol': cartcontrol
+    },
     data() {
         return {
-            goods: []
+            goods: [],
+            listHeight: [],
+            scrollY: 0
         };
     },
-    created() {
+    computed: {
+        currentIndex() {
+            for (let i = 0; i < this.listHeight.length - 1; i++) {
+                let height1 = this.listHeight[i];
+                let height2 = this.listHeight[i + 1];
+                if (this.scrollY >= height1 && this.scrollY < height2) {
+                    return i;
+                }
+            }
+        },
+        selectedGoods() {
+            let returnGood = [];
+            this.goods.forEach(goodClass => {
+                goodClass.foods.forEach(item => {
+                    if (item.count > 0) {
+                        returnGood.push(item);
+                    }
+                });
+            });
+            return returnGood;
+        }
+    },
+    methods: {
+        Bsinit() {
+            this.$nextTick(() => {
+                this.foodScroll = new Bscroll('.foodsWrapper', {
+                    probeType: 3,
+                    click: true
+                });
+                this.scrollNav = new Bscroll('.navWrapper', {
+                    click: true
+                });
+                this.foodScroll.on('scroll', (pos) => {
+                    this.scrollY = Math.abs(Math.round(pos.y));// 这里向下滑都是负数，希望得到的是正数
+                });
+            });
+        },
+        calculate_Hieght() {
+            let curHeight = 0;
+            let goodsList = this.$refs.bsWrapper.getElementsByClassName('food-list-hook');
+            this.listHeight.push(curHeight);
+            for (let i = 0; i < goodsList.length; i++) {
+                curHeight += goodsList[i].clientHeight;
+                this.listHeight.push(curHeight);
+            }
+        },
+        gotoFoods(index) {
+            let foodlist = this.$refs.bsWrapper.getElementsByClassName('food-list-hook');
+            this.foodScroll.scrollToElement(foodlist[index], 300);
+        },
+        childCartAdd(el) {
+            // 异步执行动画，提升使用体验
+            this.$nextTick(() => {
+                this.$refs.shopcart._drop(el);
+            });
+        }
+    },
+    mounted() {
         this.mapClass = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
         this.$http.get('/api/goods').then((response) => {
             response = response.data;
-            console.log(response);
             if (response.errno === ERR_OK) {
                 this.goods = response.data;
+                this.$nextTick(() => {
+                    this.Bsinit();
+                    this.calculate_Hieght();
+                });
             }
         });
-    },
-    mounted() {
-        this.$nextTick(() => {
-            this.scroll = new Bscroll('.foodsWrapper', {});
-      });
     }
 };
 </script>
@@ -87,6 +155,14 @@ export default{
                 width: 3.5rem
                 line-height: .875rem
                 padding: 0 .75rem
+                &.current
+                    position: relative
+                    margin-top: -1px
+                    z-index: 99
+                    background-color: #FFFFFF
+                    font-weight: 700
+                    .text
+                        border-none()
                 .text
                     display: table-cell
                     width: 3.5rem
@@ -132,6 +208,8 @@ export default{
                 &:last-child
                     border-none()
                     padding: 0
+                    .controlWrapper
+                        bottom: 0
                 .avatar
                     flex: 0 0 3.5625rem
                     margin-right: .625rem
@@ -174,5 +252,9 @@ export default{
                             font-weight: 700
                             vertical-align: top
                             text-decoration: line-through
+                .controlWrapper
+                    position: absolute
+                    right: 0
+                    bottom: 1.125rem
 
 </style>

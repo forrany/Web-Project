@@ -20,10 +20,10 @@ export default {
         }
     },
     computed: {
-        starType () {
+        starType() {
             return 'star-' + this.size;
         },
-        itemClasses () {
+        itemClasses() {
             let result = [];
             let score = Math.floor(this.score * 2) / 2;
             let hasDot = score % 1 !== 0;

@@ -113,7 +113,7 @@ reduce接收两个参数，第一个是`callback`,第二个参数是`初始值`�
 reduce绝不仅仅是遍历一个数组或者做一个加法这么简单。他可以做更复杂事情，可以对对象进行操作。 比如我们看到这个例子：
 
 ```javascript
-var name = [
+var fs = [
     'sam\tblender\t200\t1    ',
     'sam\tpot\t130\t5    ',
     'nacy\tconaver\t20\t3    ',
@@ -128,18 +128,22 @@ var name = [
  2. 使用reduce进行统计
 
 ```javascript
-var output = 
-    name.map((item)=>{item.trim().split('\t')})
-        .reduce((custormers,line)=>{
-           custormers[line[0]] = custormers[line[0]] || [];
-           custormers.push({
-               name: line[0],
-               property: line[1],
-               price:line[2]
-               quilty: line[3]
-           })
-        },{})
-
+var fn = function(arr) {
+    return arr.map(item=>{
+        return item.trim().split('\t');
+    }).reduce((custormer,line)=>{
+        debugger;
+        custormer[line[0]] = custormer[line[0]] || [];
+        custormer[line[0]].push({
+            'name' : line[0],
+            'good' : line[1],
+            'number' : line[2],
+            'quilty': line[3]
+        })
+        return custormer
+    },{})
+}
+fn(fs);
 ```
 嗯，可能有点复杂了，一行一行来看。
 ```javascript

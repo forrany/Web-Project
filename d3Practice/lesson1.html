@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello World 1 </p>
+    <p>Hello World 2 </p>
+    <p>Apple</p>
+    <p>Pear</p>
+    <p>Banana</p>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+    array = ['I like dog','I like cat','I like elephant']
+/*     d3.select('body')
+        .selectAll('p')
+        .text('高闻灿')
+        .style('color','red')
+        .style('font-size','72px') */
+
+/*         var p = d3.select('body')
+            .selectAll('p');
+        p.data(array).text(function (d, i) {
+                return d;
+            }) */
+
+/*             var width = 300;
+            var height = 300;
+            var dataset = [250, 210, 170, 130, 90];  //数据（表示矩形的宽度）
+            var rectHeight = 25;
+
+            var svg = d3.select('body')
+                        .append('svg')
+                        .attr('width',width)
+                        .attr('height',height);
+            svg.selectAll('rect')
+                .data(dataset)
+                .enter()
+                .append('rect')
+                .attr('x',20)
+                .attr('y',function(d,i) {
+                    return i * rectHeight;
+                })
+                .attr('width',function(d,i) {
+                    return d;
+                })
+                .attr('height',rectHeight-5)
+                .attr('fill','steelblue'); */
+        /********* 比例尺与坐标轴**********/
+         var dataset = [2.5, 2.1, 1.7, 1.3, 0.9];
+        var height = 300;
+        var width = 300;
+        var rectHeight = 25;
+        var linear = d3.scaleLinear()
+                        .domain([0,d3.max(dataset)])
+                        .range([0,250]);
+        // 这里注意先行比例尺的表示方法，与课件不太相同，新版使用scaleLinear直接定义，domain和range的输入是两个数组               
+        var svg = d3.select('body')
+                    .append('svg')
+                    .attr('height',height)
+                    .attr('width',width);
+        svg.selectAll('rect')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr('x',20)
+            .attr('y',function(d,i) {
+                return i * rectHeight;
+            })
+            .attr('height',rectHeight - 5)
+            .attr('width',function(d,i) {
+                return linear(d);
+            })
+            .attr('fill','steelblue')
+        var axis = d3.axisBottom(linear).ticks(7);
+        svg.append('g')
+        .attr('transform', 'translate(0,120)')
+        .call(axis) 
+        
+
+        /********* 完整的柱状图 **********/
+/*         var svg = d3.select('body')
+                    .append('svg')
+                    .attr('width',300)
+                    .attr('height',300);
+        var padding = {
+            left:30,
+            right:30,
+            top:20,
+            bottom:20
+        }
+
+        //定义一个数组
+        var dataset = [10, 20, 30, 40, 33, 24, 12, 5];
+        var xScale = d3.scaleOrdinal()
+                        .domain(d3.range(dataset.length)) */
+
+</script>
+</body>
+</html>

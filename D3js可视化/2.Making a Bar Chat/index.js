@@ -16,6 +16,7 @@ const render = data => {
     const yScale = d3.scaleBand()
         .domain(data.map(yValue))
         .range([0, innerHeight])
+        .padding(0.15)
     const g = svg.append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`)
     g.selectAll('rect').data(data)  //选择`rect`并绑定数据data，但这个时候没有元素，因此使用enter

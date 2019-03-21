@@ -1,7 +1,7 @@
 const svg = d3.select('svg');
 const height = +svg.attr('height');
 const width =  +svg.attr('width');
-const margin = {left:50,top:10,right:20,bottom:30};
+const margin = {left:80,top:10,right:20,bottom:30};
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 
@@ -23,8 +23,8 @@ const render = data => {
         .attr('y',d => yScale(yValue(d)))
         .attr('width', d => xScale(xValue(d)))
         .attr('height',yScale.bandwidth())
-    svg.append('g').call(d3.axisLeft(yScale));
-    svg.append('g').call(d3.axisBottom(xScale))
+    g.append('g').call(d3.axisLeft(yScale));
+    g.append('g').call(d3.axisBottom(xScale))
         .attr('transform',`translate(0,${innerHeight})`)
 }
 

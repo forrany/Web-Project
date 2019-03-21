@@ -26,6 +26,14 @@
 
 [...更多](https://forrany.github.io/)
 
+## D3数据可视化
+
+1. [D3初印象，画一个笑脸吧](https://forrany.github.io/2019/02/16/D3%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E5%88%9D%E5%8D%B0%E8%B1%A1/) 认识SVG，熟悉SVG的常用操作，[在线预览](https://forrany.github.io/Web-Project/D3js%E5%8F%AF%E8%A7%86%E5%8C%96/1.Smile%20face%20with%20D3js/)
+2. [D3之柱状图](https://forrany.github.io/2019/03/20/D3%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9F%B1%E7%8A%B6%E5%9B%BE/) 学习D3的数据读取方法，比例尺、坐标轴和柱状图的绘制方法，[在线预览](https://forrany.github.io/Web-Project/D3js%E5%8F%AF%E8%A7%86%E5%8C%96/2.Making%20a%20Bar%20Chat/)
+3. 更新中...
+
+
+
 ## 项目清单
 
 1. 轮播图    --  利用CSS3 transition属性，写出简介的轮播图插件  **原生js**

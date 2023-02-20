@@ -2,6 +2,8 @@
 
 ## 博客-- VK Blog
 
+最新博客地址: https://vincentko.top/
+
 博客开通后，原在github写的前端相关总结和文章都搬家啦，[传送门](https://forrany.github.io)
 
 文章目录：
